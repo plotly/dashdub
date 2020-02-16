@@ -20,6 +20,7 @@ PODCAST_INTERVAL = 5000
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
+
 def seconds_to_MMSS(slider_seconds):
     decimal, minutes = math.modf(slider_seconds / 60.0)
     seconds = str(round(decimal * 60.0))
@@ -32,7 +33,7 @@ def seconds_to_MMSS(slider_seconds):
 def generate_plot(step=1):
     print(PODCAST_INTERVAL * step, PODCAST_INTERVAL * (step + 1))
     # 5 second interval of podcast
-    seg = podcast[PODCAST_INTERVAL * step : PODCAST_INTERVAL * (step + 1)]
+    seg = podcast[PODCAST_INTERVAL * step: PODCAST_INTERVAL * (step + 1)]
     samples = seg.get_array_of_samples()
     arr = np.array(samples)
     df = pd.DataFrame(arr)
@@ -58,7 +59,6 @@ def generate_plot(step=1):
 
 
 fig = generate_plot()
-print(fig)
 
 app.layout = html.Div(
     [
@@ -82,12 +82,15 @@ app.layout = html.Div(
         html.P(children="Carnegie Mellon Sphinx transcription:"),
         dcc.Textarea(id="transcription_output", cols=80),
         html.Br(),
-        html.Audio(id="player", src=PATH, controls=True, style={"width": "100%"}),
+        html.Audio(id="player", src=PATH, controls=True, style={
+            "width": "100%"
+        }),
         dcc.Graph(id="waveform", figure=fig),
     ]
 )
 
-# Transcribe audio
+
+#  Transcribe audio
 @app.callback(
     [
         dash.dependencies.Output("slider-output-container", "children"),
@@ -107,7 +110,7 @@ def transcribe_audio(slider_seconds):
     fig = generate_plot(step)
 
     # Transcribe 5 seconds of audio
-    seg = podcast[PODCAST_INTERVAL * (step - 1) : PODCAST_INTERVAL * step]
+    seg = podcast[PODCAST_INTERVAL * (step - 1): PODCAST_INTERVAL * step]
     f = seg.export(out_f=None, format="wav")
 
     # Use URI timerange property to seek to correct position in HTML Audio
