@@ -18,7 +18,7 @@ PODCAST_LENGTH = podcast.duration_seconds
 PODCAST_INTERVAL = 5000
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-
+server = app.server
 
 def seconds_to_MMSS(slider_seconds):
     decimal, minutes = math.modf(slider_seconds / 60.0)
