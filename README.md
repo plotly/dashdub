@@ -2,7 +2,7 @@
 
 Convert speech to text with Dash &amp; Python
 
-Clone and run with `python3 dashdub.py`
+Clone and run with `python3 app.py`
 
 #### Dependencies
 - `ffmpeg` for [pydub](https://github.com/jiaaro/pydub)
