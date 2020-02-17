@@ -10,4 +10,4 @@ Clone and run with `python3 app.py`
 
 ***
 
-![dashdub_screenshot](https://raw.githubusercontent.com/jackparmer/dashdub/master/speech_rec_screenshot.png)
+![dashdub_screenshot](https://raw.githubusercontent.com/plotly/dashdub/master/speech_rec_screenshot.png)

@@ -73,7 +73,7 @@ app.layout = html.Div(
             in realtime with Python bindings to [Carnegie Mellon's \
                 Sphinx Speech Recognition software](https://cmusphinx.github.io). \
                     Play the audio to see how well the transcription matches.
-    [Code on GitHub](https://github.com/jackparmer/dashdub).
+    [Code on GitHub](https://github.com/plotly/dashdub).
     """
         ),
         dcc.Markdown("**Drag this slider** (then wait a few seconds):"),
