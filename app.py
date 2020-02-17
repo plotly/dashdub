@@ -131,7 +131,8 @@ def transcribe_audio(slider_seconds):
 
     try:
         transcription = r.recognize_sphinx(audio)
-    except:
+    except Exception as e:
+        print(e)
         transcription = ""
 
     return MMSS, fig, transcription, src
