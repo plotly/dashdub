@@ -1,15 +1,16 @@
 import os
+import math
+
 import dash
 import dash_html_components as html
 import dash_core_components as dcc
-
-from pydub import AudioSegment
-import speech_recognition as sr
-
-import math
 import numpy as np
 import pandas as pd
 import plotly.express as px
+import speech_recognition as sr
+
+from pydub import AudioSegment
+
 
 external_stylesheets = ["https://codepen.io/jackparmer/pen/BaNozEj.css"]
 
