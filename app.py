@@ -12,14 +12,12 @@ import speech_recognition as sr
 from pydub import AudioSegment
 
 
-external_stylesheets = ["https://codepen.io/jackparmer/pen/BaNozEj.css"]
-
 PATH = "assets/pmoney.mp3"
 podcast = AudioSegment.from_mp3(PATH)
 PODCAST_LENGTH = podcast.duration_seconds
 PODCAST_INTERVAL = 5000
 
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = dash.Dash(__name__)
 server = app.server
 
 
