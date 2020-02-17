@@ -1,3 +1,4 @@
+import os
 import dash
 import dash_html_components as html
 import dash_core_components as dcc
@@ -136,4 +137,4 @@ def transcribe_audio(slider_seconds):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=True, host='0.0.0.0', port=os.getenv('PORT', 8500))
